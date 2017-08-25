@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        applicationId "com.mediaprima.dramasangat"
+        manifestPlaceholders = [manifestApplicationId          : "${applicationId}",
+                                onesignal_app_id               : "bbb4db16-db59-45f4-b710-3e5e9e576d1f",
+                                // Project number pulled from dashboard, local value is ignored.
+                                onesignal_google_project_number: "782986840058"]
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 2
+        versionName "1.1"
+        multiDexEnabled = true
+    }
+    buildTypes {
+        release {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('libs/OoyalaSkinSDK.jar')
+    compile files('libs/gigya-sdk-3.3.4.jar')
+    compile 'com.facebook.android:facebook-android-sdk:4.+'
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.android.support:support-v4:25.1.0'
+    compile 'com.android.support:design:25.1.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.bignerdranch.android:expandablerecyclerview:2.1.1'
+    compile 'com.google.firebase:firebase-core:10.0.1'
+    compile 'com.google.firebase:firebase-crash:10.0.1'
+    compile 'it.sephiroth.android.library.imagezoom:imagezoom:+'
+    compile 'com.github.rampo.updatechecker:library:2.1.8'
+    compile 'com.google.android.gms:play-services-analytics:10.0.1'
+    compile 'com.onesignal:OneSignal:3.+@aar'
+    compile 'com.google.android.gms:play-services-gcm:10.0.1'
+    compile 'com.google.android.gms:play-services-location:10.0.1'
+    compile 'com.google.android.gms:play-services-tagmanager:10.0.1'
+    compile 'com.google.android.gms:play-services-ads:10.0.1'
+    compile 'com.github.hotchemi:android-rate:1.0.1'
+    compile 'com.google.android.gms:play-services-auth:10.0.1'
+    compile 'com.android.support:multidex:1.0.1'
+    testCompile 'junit:junit:4.12'
+    compile project(':cc-android-sdk')
+}
+apply plugin: 'com.google.gms.google-services'

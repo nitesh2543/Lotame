@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">Drama Sangat</string>
+
+
+    <string name="play_store_url"> http://play.google.com/store/apps/details?id=</string>
+
+    <string name="no_internet">You are not connected to the Internet. Please check your Internet connection.</string>
+    <string name="empty_string">No items to display</string>
+    <string name="action_share">share</string>
+    <string name="fragment_image_trans">transition</string>
+    <string name="empty_string_search_result">No Results Found</string>
+
+    <string name="search_hint">Looking for?</string>
+
+    <!--Time Stamp-->
+    <string name="one_minute_ago">1 Minute ago</string>
+    <string name="minutes_ago">%1$d Minutes ago</string>
+    <string name="one_hour_ago">1 Hour ago</string>
+    <string name="hours_ago">%1$d Hours ago</string>
+    <string name="one_day_ago">1 Day ago</string>
+    <string name="days_ago">%1$d Days ago</string>
+
+    <string name="Artist">Artis</string>
+    <string name="dialog_app_rate">Rate the app</string>
+    <string name="rate_app_message">You want to rate the app?</string>
+    <string name="rate_app_title">Drama Sangat</string>
+    <string name="dialog_your_feedback">dialog_your_feedback</string>
+    <string name="dialog_ask_later">dialog_ask_later</string>
+    <string name="app_message">app_message</string>
+    <string name="rate_app_msg">If you love our app, please take a moment to rate it.</string>
+    <string name="fb_login_protocol_scheme">fb690310054484583</string>
+    <string name="facebook_app_id">375244532844644</string>
+    <string name="gigya_api_key">3_ODg_qZxiKmcpMRnBwYP6_N647lX_W-5kf6baIPo_PmcEkRLbtDrda0paoevtRZuf</string>
+    <string name="banner_ad_unit_id">/6499/example/banner</string>
+    <string name="email_login">Email</string>
+    <string name="password_login">Password</string>
+    <string name="email">* Email :</string>
+    <string name="password">* Password :</string>
+    <string name="forgot_password"><u>Forgot password</u></string>
+    <string name="name">* First Name : </string>
+    <string name="last_name">* Last Name :</string>
+    <string name="confirm_password">* Confirm Password :</string>
+    <string name="login_success_msg">User logged in successfully.</string>
+    <string name="logout_success_msg">User logged out successfully.</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="gender">*Gender : </string>
+    <string name="ethnicity">Ethnicity : </string>
+    <string name="dob">*Date of birth : </string>
+    <string name="dob_hint">(dd/mm/yyyy)</string>
+    <string name="register">Register</string>
+    <string name="malay">Malay</string>
+    <string name="proceed">Proceed</string>
+    <string name="verify">Verify</string>
+    <string name="change_password">Change Password</string>
+    <string name="verfication_code">*Verification Code :</string>
+    <string name="new_password">*New Password :</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="mandatory">(*) means mandatory field.</string>
+
+</resources>

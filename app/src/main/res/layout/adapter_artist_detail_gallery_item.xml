@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="child_item"
+            type="com.ndtv.mediaprima.mvvm.model.SectionItems"/>
+        <variable
+            name="clickListener"
+            type="com.ndtv.mediaprima.common.utils.RecyclerViewOnItemClickHandler"/>
+        <import type="android.graphics.drawable.Drawable"/>
+        <variable
+            name="placeHolder"
+            type="Drawable"></variable>
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:onClick="@{clickListener.onClick}"
+        android:id="@+id/gallery"
+        android:layout_width="113.75dp"
+        android:layout_height="113.75dp"
+        android:layout_weight="1"
+        android:paddingLeft="2.5dp"
+        android:paddingRight="2.5dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:scaleType="fitXY"
+        android:src="@{child_item.image_url}"
+        app:default="@{@drawable/placeholder_item}"/>
+</LinearLayout>
+</layout>

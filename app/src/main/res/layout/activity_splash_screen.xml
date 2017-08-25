@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context="com.ndtv.mediaprima.mvvm.view.activity.SplashScreenActivity">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+    <ImageView
+        android:layout_width="220dp"
+        android:layout_height="200dp"
+        android:src="@drawable/side_drawer_logo"
+        android:layout_centerInParent="true"
+        android:id="@+id/splash_screen_logo"/>
+    <!--<ProgressBar
+        android:layout_below="@+id/splash_screen_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>-->
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="220dp"
+        android:layout_height="10dp"
+        android:indeterminate="true"
+        android:max="100"
+        android:progress="20"
+        android:visibility="visible"
+        android:layout_below="@id/splash_screen_logo"/>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="child_item"
+            type="com.ndtv.mediaprima.mvvm.model.SectionItems" />
+
+        <variable
+            name="clickListener"
+            type="com.ndtv.mediaprima.common.utils.RecyclerViewOnItemClickHandler"></variable>
+
+        <import type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="placeHolder"
+            type="Drawable"></variable>
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="255dp"
+        android:onClick="@{clickListener.onClick}"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@{child_item.image_url}"
+            app:default="@{@drawable/placeholder_item}" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/lifestyle_gradient_effect" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:minLines="2"
+            android:padding="5dp"
+            android:text="@{child_item.name}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="22.5sp" />
+
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:onClick="@{clickListener.onClick}"
+            android:padding="20dp"
+            android:src="@drawable/icn_share_white" />
+
+    </RelativeLayout>
+</layout>

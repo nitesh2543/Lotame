@@ -1,0 +1,136 @@
+<layout>
+
+    <data>
+
+        <variable
+            name="article"
+            type="com.ndtv.mediaprima.mvvm.model.Result" />
+
+        <import type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="placeHolder"
+            type="Drawable"></variable>
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:focusableInTouchMode="true">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/appbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                android:fitsSystemWindows="true">
+
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:id="@+id/collapsing_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:contentScrim="?attr/colorPrimary"
+                    app:expandedTitleMarginEnd="64dp"
+                    app:expandedTitleMarginStart="48dp"
+                    app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+                    android:fitsSystemWindows="true">
+
+                    <ImageView
+                        android:id="@+id/banner_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="255dp"
+                        android:background="@color/background"
+                        android:scaleType="fitXY"
+                        android:src="@{article.data.images[0]}"
+                        app:default="@{@drawable/place_holder_banner}"
+                        app:layout_collapseMode="parallax" />
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:layout_collapseMode="pin"
+                        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                    </android.support.v7.widget.Toolbar>
+
+                </android.support.design.widget.CollapsingToolbarLayout>
+            </android.support.design.widget.AppBarLayout>
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="fill_vertical"
+                android:background="@color/background"
+                android:clipToPadding="false"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:indeterminate="true"
+                        android:max="100"
+                        android:progress="10"
+                        android:secondaryProgress="50"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/lifestyle_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{article.data.name}"
+                        android:textColor="#CCCC"
+                        android:textSize="22.5sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/icn_clock" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center"
+                            android:textColor="@color/time_color"
+                            android:textSize="11sp"
+                            app:time="@{article.data.timeStamp}" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/lifestyle_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:htmltext='@{article.data.content}'
+                        android:layout_marginBottom="?actionBarSize"/>
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </android.support.design.widget.CoordinatorLayout>
+    </FrameLayout>
+</layout>

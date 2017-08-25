@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ndtv.mediaprima.mvvm.viewmodel.ViewModel" />
+
+        <variable
+            name="drama"
+            type="com.ndtv.mediaprima.mvvm.model.Result"></variable>
+
+        <import type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="placeHolder"
+            type="Drawable"></variable>
+    </data>
+
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/root"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <android.support.design.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="true">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/appbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                android:fitsSystemWindows="true">
+
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:id="@+id/collapsing_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:contentScrim="?attr/colorPrimary"
+                    app:expandedTitleMarginEnd="64dp"
+                    app:expandedTitleMarginStart="48dp"
+                    app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+                    android:fitsSystemWindows="true">
+
+                    <FrameLayout
+                        android:id="@+id/banner_container_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/background" />
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:layout_collapseMode="pin"
+                        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                    </android.support.v7.widget.Toolbar>
+
+                </android.support.design.widget.CollapsingToolbarLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="93.75dp"
+                    android:background="@color/background"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/detail_icon"
+                        android:layout_width="93dp"
+                        android:layout_height="93dp"
+                        android:layout_marginLeft="21.25dp"
+                        android:layout_marginRight="21.25dp"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@{drama.data.images[0]}"
+                        app:default="@{@drawable/placeholder_item}" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:paddingRight="5dp">
+
+                        <TextView
+                            android:id="@+id/drama_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@{drama.data.name}"
+                            android:textColor="#CCCCCC"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/drama_category"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{drama.data.categoryName}"
+                            android:textColor="#999999"
+                            android:textSize="14.5sp" />
+
+                        <TextView
+                            android:id="@+id/drama_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:releaseDate="@{drama.data.created_at}"
+                            android:textColor="#999999"
+                            android:textSize="14.5sp"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.design.widget.AppBarLayout>
+
+            <FrameLayout
+                android:id="@+id/home_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        </android.support.design.widget.CoordinatorLayout>
+    </FrameLayout>
+</layout>

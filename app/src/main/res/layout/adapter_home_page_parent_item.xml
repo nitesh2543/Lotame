@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="parent_item"
+            type="com.ndtv.mediaprima.mvvm.model.Data" />
+
+        <variable
+            name="clickListener"
+            type="com.ndtv.mediaprima.common.utils.RecyclerViewOnItemClickHandler" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18.75dp"
+            android:paddingTop="22dp"
+            android:text="@{parent_item.sectionName}"
+            android:textColor="@color/drama_text_color"
+            android:textSize="17.5sp" />
+
+        <TextView
+            android:id="@+id/view_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="18.75dp"
+            android:onClick="@{clickListener.onClick}"
+            android:paddingBottom="22dp"
+            android:paddingTop="22dp"
+            android:text="@{parent_item.sectionButton.text}"
+            android:textColor="@color/home_item_view_all"
+            android:textSize="14sp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/view_all"
+            android:nestedScrollingEnabled="true" />
+    </RelativeLayout>
+</layout>

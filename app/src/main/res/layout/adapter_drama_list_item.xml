@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="child_item"
+            type="com.ndtv.mediaprima.mvvm.model.SectionItems" />
+
+        <variable
+            name="clickListener"
+            type="com.ndtv.mediaprima.common.utils.RecyclerViewOnItemClickHandler" />
+
+        <import type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="placeHolder"
+            type="Drawable"></variable>
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/child_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{clickListener.onClick}">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="172.5dp"
+            android:scaleType="fitXY"
+            android:src="@{child_item.image_url}"
+            app:default="@{@drawable/placeholder_item}" />
+
+        <LinearLayout
+            android:id="@+id/item_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/drama_text_background"
+            android:orientation="vertical"
+            android:padding="6.25dp">
+
+            <TextView
+                android:id="@+id/item_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{child_item.name}"
+                android:textColor="@color/white"
+                android:textSize="14.5sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/child_item_duration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="10.5sp"
+                app:minutes="@{child_item.video_duration}" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,53 @@
+<layout>
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ndtv.mediaprima.mvvm.viewmodel.ViewModel"></variable>
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context="com.ndtv.mediaprima.common.ui.RecyclerViewFragment">
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:indeterminate="true"
+            android:max="100"
+            android:progress="10"
+            android:secondaryProgress="50"
+            android:visibility="@{viewModel.isLoading}" />
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/progressBar"
+            app:refreshing="@{viewModel.isRefreshing}">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="LinearLayoutManager"/>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <TextView
+            android:id="@+id/empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="16dp"
+            android:text="@string/empty_string"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+</layout>

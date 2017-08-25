@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="child_item"
+            type="com.ndtv.mediaprima.mvvm.model.SectionItems" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="21.25dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/episode_title"
+            android:textSize="15.5dp"
+            android:text="@{child_item.name}"
+            android:paddingBottom="21.25dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/episode_text"
+            android:textSize="15.5dp"
+            android:text="@{child_item.description}"/>
+    </LinearLayout>
+</layout>

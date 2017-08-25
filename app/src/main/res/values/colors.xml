@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@android:color/white</color>
+    <color name="colorPrimaryDark">#D1D1D1</color>
+    <color name="colorAccent">#8B69B3</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="background">#091A21</color>
+    <color name="tab_selected_text_color">#EE0085</color>
+    <color name="drama_text_background">#998B69B3</color>
+    <color name="artist_text_background">#B3D6F9C5</color>
+
+    <color name="artist_text_color">#D6F9C5</color>
+    <color name="drama_text_color">#8B69B3</color>
+    <color name="lifestyle_text_color">#0AA5C9</color>
+
+    <color name="lifestyle_tab_selected">#00AAE0</color>
+    <color name="lifestyle_tab_text">#4D4D4D</color>
+    <color name="time_color">#808080</color>
+    <color name="home_item_view_all">#B3B3B3</color>
+    <color name="menu_selector">#404D4D4D</color>
+    <color name="menu_divider">#CC4D4D4D</color>
+    <color name="episode_title">#F2F2F2</color>
+    <color name="episode_text">#CCCCCC</color>
+
+    <color name="orange">#FF9900</color>
+    <color name="green">#009900</color>
+    <color name="blue">#000099</color>
+
+
+    <color name="onesignal_bgimage_notif_title_color">#FFFF0000</color>
+    <color name="onesignal_bgimage_notif_body_color">#FF00FF00</color>
+
+</resources>

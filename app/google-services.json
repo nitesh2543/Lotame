@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "754536024232",
+    "firebase_url": "https://drama-sangat.firebaseio.com",
+    "project_id": "drama-sangat",
+    "storage_bucket": "drama-sangat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754536024232:android:baf7b23181fdd535",
+        "android_client_info": {
+          "package_name": "com.mediaprima.dramasangat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "754536024232-us8bhfch4t3pqunbvp4je78rjujshj64.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mediaprima.dramasangat",
+            "certificate_hash": "5DE0FDE9B282022BF147CF940DB13F97B9EE19CF"
+          }
+        },
+        {
+          "client_id": "754536024232-ovcbjn8uhhee6ur55tac9ik8j9uooi8n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPWNYMNkXL7tjCYF_fwT9zMDI8eiLdLfw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "754536024232-ovcbjn8uhhee6ur55tac9ik8j9uooi8n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

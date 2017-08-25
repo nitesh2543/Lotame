@@ -1,0 +1,77 @@
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ndtv.mediaprima.mvvm.viewmodel.ViewModel" />
+
+        <variable
+            name="about"
+            type="com.ndtv.mediaprima.mvvm.model.Data" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:theme="@style/AppTheme.PopupOverlayDark" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:indeterminate="true"
+                    android:max="100"
+                    android:progress="10"
+                    android:secondaryProgress="50"
+                    android:visibility="@{viewModel.isLoading}" />
+
+                <TextView
+                    android:id="@+id/about_us"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/progressBar"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="30dp"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:htmltext="@{about.content}"
+                    android:autoLink="all"
+                    android:linksClickable="true"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/empty_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="16dp"
+                    android:text="@string/empty_string"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>
